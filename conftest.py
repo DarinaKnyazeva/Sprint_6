@@ -1,7 +1,5 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 
 from data import MAIN_PAGE_URL
 from page_object.pages.main_page import MainPage

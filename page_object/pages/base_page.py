@@ -43,3 +43,8 @@ class BasePage:
     @allure.step('Добавление текста в элемент')
     def add_text_to_element(self, locator, text):
         self.find_elm_with_wait(locator).send_keys(text)
+
+    @allure.step('Получение текущего URL')
+    def get_current_url(self):
+        current_url = self.driver.current_url
+        return current_url

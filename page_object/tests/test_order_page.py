@@ -6,6 +6,7 @@ from data import FIRST_ORDER_DATA, SECOND_ORDER_DATA, MAIN_PAGE_URL, DZEN_PAGE
 from page_object.locators.main_page_locators import MainPageLocators
 
 
+@allure.feature('Страница заказа самоката')
 class TestOrderPage:
 
     @allure.title('Заказ самоката')
@@ -32,7 +33,7 @@ class TestOrderPage:
         order_page.create_order(order_data)
         order_page.check_order_status()
         order_page.click_to_logo()
-        assert order_page.driver.current_url == MAIN_PAGE_URL
+        assert order_page.get_current_url == MAIN_PAGE_URL
 
     @allure.title('Проверка перехода по лого Яндекса на страницу Дзен')
     @pytest.mark.parametrize(
@@ -46,4 +47,4 @@ class TestOrderPage:
         order_page.create_order(order_data)
         order_page.check_order_status()
         order_page.click_to_yandex_logo()
-        assert DZEN_PAGE in order_page.driver.current_url
+        assert DZEN_PAGE in order_page.get_current_url

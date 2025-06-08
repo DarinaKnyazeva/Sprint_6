@@ -65,3 +65,4 @@ class OrderPage(BasePage):
 
         WebDriverWait(self.driver, 300).until(
             expected_conditions.url_contains(DZEN_PAGE))
+
